@@ -1,0 +1,25 @@
+#!/bin/bash
+# /usr/local/bin/kill_oai
+# Whitelist-only process termination wrapper for OAI Manager.
+# Only nr-softmodem and nr-uesoftmodem are valid targets.
+PROCESS="$1"; PID="$2"
+ALLOWED=("nr-softmodem" "nr-uesoftmodem")
+VALID=false
+for p in "${ALLOWED[@]}"; do [[ "$PROCESS" == "$p" ]] && VALID=true && break; done
+if [[ "$VALID" != "true" ]]; then
+  echo "ERROR: '$PROCESS' is not an allowed process name." >&2; exit 1
+fi
+if [[ -n "$PID" ]]; then
+  [[ "$PID" =~ ^[0-9]+$ ]] || { echo "ERROR: Invalid PID '$PID'" >&2; exit 1; }
+  kill -- -"$PID" 2>/dev/null || true
+  kill -SIGTERM "$PID" 2>/dev/null || true
+  sleep 1
+  kill -SIGKILL "$PID" 2>/dev/null || true
+  echo "Killed PID $PID ($PROCESS)"
+else
+  pkill -SIGTERM -x "$PROCESS" 2>/dev/null || true
+  sleep 1
+  pkill -SIGKILL -x "$PROCESS" 2>/dev/null || true
+  echo "Killed all instances of $PROCESS"
+fi
+exit 0

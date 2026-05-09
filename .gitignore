@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Runtime
+logs/
+captures/
+install.log
+*.pid
+
+# OAI binaries (too large for git)
+xapp/xapp_voice_slice_ctrl
+
+# OS
+.DS_Store
+*.swp
