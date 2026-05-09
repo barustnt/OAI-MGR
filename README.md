@@ -173,7 +173,19 @@ only accepts `nr-softmodem` and `nr-uesoftmodem` as valid targets.
 and `/xapp` to port 7000 to avoid CORS issues during development.
 
 ---
+## Citation
 
+If you use OAI Manager in your research, please cite it as follows:
+
+```bibtex
+@software{Bara_OAI_Manager_2026,
+  author = {Bara, Anis},
+  title = {{OAI-MGR: Full-stack 5G Management Platform with Voice-to-Slice}},
+  url = {[https://github.com/barustnt/OAI-MGR](https://github.com/barustnt/OAI-MGR)},
+  version = {1.0.0},
+  year = {2026}
+}
+---
 ## License
 
 Apache 2.0
