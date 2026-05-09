@@ -173,6 +173,13 @@ only accepts `nr-softmodem` and `nr-uesoftmodem` as valid targets.
 and `/xapp` to port 7000 to avoid CORS issues during development.
 
 ---
+
+## License
+
+Apache 2.0
+
+Built on OpenAirInterface, FlexRIC, React, and FastAPI.
+
 ## Citation
 
 If you use OAI Manager in your research, please cite it as follows:
@@ -185,9 +192,4 @@ If you use OAI Manager in your research, please cite it as follows:
   version = {1.0.0},
   year = {2026}
 }
----
-## License
 
-Apache 2.0
-
-Built on OpenAirInterface, FlexRIC, React, and FastAPI.
